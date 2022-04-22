@@ -3,6 +3,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import Authereum from "authereum";
 import Fortmatic from "fortmatic";
 import WalletLink from "walletlink";
+import { getImpersonatorProvider } from "impersonator-web3modal";
 import Web3Modal from "web3modal";
 import { ALCHEMY_KEY, INFURA_ID } from "../constants";
 
@@ -39,6 +40,7 @@ const web3ModalSetup = () =>
           },
         },
       },
+      ...getImpersonatorProvider(`https://mainnet.infura.io/v3/${INFURA_ID}`),
       portis: {
         display: {
           logo: "https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png",
